@@ -1,0 +1,53 @@
+/*reset*/
+html,body,div,section,article,ul,ol,li{padding:0;margin:0;}
+ul,ol,li{list-style:none;}
+a,a:hover{text-decoration:none;}
+body{height:100%;font-size:14px;line-height:1.2;font-family:'Arial','Helvetica','STHeiti','Microsoft YaHei';}
+html,body{overflow:hidden;background-color: rgba(0,0,0,0.5);}
+html{font-size: 16px;}
+
+/*页面样式*/
+.wrapper{position:absolute;top:0;right:0;bottom:0;left:0;background:#fefefe;overflow:hidden;margin: 0 auto;}
+.page{display:none;position:absolute;top:0;right:0;bottom:0;left:0;background:#fff;z-index:1;-webkit-animation-duration:1s;-webkit-animation-timing-function:ease;}
+.page.active{display: block;}
+.page span{font-size: 36px;}
+
+.page:nth-child(1){background-color: #c25151;}
+.page:nth-child(2){background-color: #3aade8;}
+.page:nth-child(3){background-color: #fa811e;}
+.page:nth-child(4){background-color: #85f488;}
+
+.operate{}
+.operate .btn-prev,
+.operate .btn-next{position: absolute;width: 5em;height: 5em;line-height: 5em;background-color: rgba(0,0,0,0.8);color: #fff;text-align: center;right: 0;z-index: 99;}
+.operate .btn-prev{top: 0;}
+.operate .btn-next{bottom: 0;}
+.operate .btn-prev::after{content: "<";font-size: 2em;}
+.operate .btn-next::after{content: ">";font-size: 2em;}
+.operate .trigger-list{position: absolute;width: 1em;right: 2em;top: 50%;-webkit-transform: translateY(-50%);z-index: 99;}
+.operate .trigger-list .trigger{display: inline-block;width: 1em;height: 1em;background: rgba(0,0,0,0.7);border-radius: 50%;}
+.operate .trigger-list .active{background: rgba(255,255,255,0.7);}
+
+/*动画样式*/
+.toIn,
+.toOut{-webkit-transform-origin:50% 100%;}
+.toIn{display:block;z-index:2;-webkit-animation-name:phoneCoverIn;}
+@-webkit-keyframes phoneCoverIn{
+  0%{-webkit-transform:translateY(100%);}
+  100%{-webkit-transform:translateY(0);}
+}
+.toOut{display:block;z-index:1;-webkit-animation-name:phoneCoverOut;}
+@-webkit-keyframes phoneCoverOut{
+  0%{-webkit-transform:translateY(0);}
+  100%{-webkit-transform:translateY(-30%);}
+}
+.backIn{display:block;z-index:2;-webkit-animation-name:phoneCoverBackIn;}
+@-webkit-keyframes phoneCoverBackIn{
+  0%{-webkit-transform:translateY(-100%);}
+  100%{-webkit-transform:translateY(0);}
+}
+.backOut{display:block;z-index:1;-webkit-animation-name:phoneCoverOutBack;}
+@-webkit-keyframes phoneCoverOutBack{
+  0%{-webkit-transform:translateY(0);}
+  100%{-webkit-transform:translateY(30%);}
+}

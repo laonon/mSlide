@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-title" content="mSlide">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="initial-scale=1.0,user-scalable=no,minimal-ui">
+	<title>mSlide demo</title>
+	<link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+	<!--外层容器-->
+	<section class="wrapper" id="wrapper" data-index="0">
+
+		<!--第1页-->
+	    <article class="page active" node-type="page">
+	    	<span>1</span>
+	    </article>
+	    <!--/第1页-->
+
+	    <!--第2页-->
+	    <article class="page" node-type="page">
+	        <span>2</span>
+	    </article>
+	    <!--/第2页-->
+
+	    <!--第3页-->
+	    <article class="page" node-type="page">
+	        <span>3</span>
+	    </article>
+	    <!--/第3页-->
+
+	    <!--第4页-->
+	    <article class="page" node-type="page">
+	        <span>4</span>
+	    </article>
+	    <!--/第4页-->
+
+	</section>
+	<!--/外层容器-->
+	
+	<script type="text/javascript" src="jsfinger.js"></script>
+	<script type="text/javascript" src="../mSlide.js"></script>
+	<script type="text/javascript">
+	var slide = new mSlide({
+		hasTriggers: true, //是否有触发点
+		hasPrevTrigger: true, //是否有上一帧触点
+		hasNextTrigger: true, //是否有下一帧的触点
+		prevTriggerClass:'.btn-prev', //上一帧触点选择器
+		nextTriggerClass:'.btn-next', //下一帧触点选择器
+		isLoop: true, //是否循环首尾衔接
+		activeIndex: 0, //当前索引
+		container: '.wrapper', //容器选择器
+		panelClass: '.page', //面板选择器
+		triggerClass: '.trigger', //触发器选择器
+		activeClass: 'toIn', //正序入场
+		blurClass: 'toOut', //正序出场
+		backActiveClass: 'backIn', //反序入场
+		backBlurClass: 'backOut' //反序入场
+	});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
